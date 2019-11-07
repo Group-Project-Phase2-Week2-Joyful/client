@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/Group-Project-Phase2-Week2-Joyful/client#readme",
   "dependencies": {
-    "buefy": "^0.8.6"
+    "axios": "^0.19.0",
+    "sweetalert2": "^9.1.5",
+    "vue": "^2.6.10"
   }
 }
