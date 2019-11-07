@@ -1,0 +1,20 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "client for dogstagram",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Group-Project-Phase2-Week2-Joyful/client.git"
+  },
+  "keywords": [],
+  "author": "Andreas, Elizabeth, Satyo, Rendo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Group-Project-Phase2-Week2-Joyful/client/issues"
+  },
+  "homepage": "https://github.com/Group-Project-Phase2-Week2-Joyful/client#readme"
+}
