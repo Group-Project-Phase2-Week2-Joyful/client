@@ -1,17 +1,14 @@
 <template>
-  <h1>{{ message }}</h1>
+  
 </template>
 
 <script>
+import homePage from "./views/homePage";
 export default {
-  data() {
-    return {
-      message: 'Hello world',
-    };
-  },
-};
+
+}
 </script>
 
-<style scoped>
-</style>
+<style>
 
+</style>
