@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Group-Project-Phase2-Week2-Joyful/client/issues"
   },
-  "homepage": "https://github.com/Group-Project-Phase2-Week2-Joyful/client#readme"
+  "homepage": "https://github.com/Group-Project-Phase2-Week2-Joyful/client#readme",
+  "dependencies": {
+    "buefy": "^0.8.6"
+  }
 }
