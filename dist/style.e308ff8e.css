@@ -1,18 +1,3 @@
-<template>
-  <nav class="navbar navbar-default fixed-top">
-    <div class="container" id="navtext">
-      <h1 id="pageTitle">Jumpshare!</h1>
-    </div>
-  </nav>
-</template>
-
-<script>
-export default {
-    name: 'navbar'
-};
-</script>
-
-<style scoped>
 body {
     color: grey;
     font-size: 1em;
@@ -92,4 +77,5 @@ footer p{
       left: 50%;
       transform: translateX(-50%) translateY(-50%);
 }
-</style>
+
+/*# sourceMappingURL=/style.e308ff8e.css.map */
