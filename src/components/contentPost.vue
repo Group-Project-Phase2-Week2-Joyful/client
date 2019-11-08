@@ -41,7 +41,7 @@ export default {
     name: "contentPost",
     data() {
       return {
-        sharelink: 'https://twitter.com/intent/tweet?text=' + window.location.href + `?q=${this.idImage}`
+        sharelink: `https://twitter.com/intent/tweet?text=Viral! Bayi ini bisa bernyanyi! ${window.location.href}?q=${this.idImage}`
       }
     },
     props: ['urlImage', 'idImage'],
