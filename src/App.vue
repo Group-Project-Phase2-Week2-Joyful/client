@@ -1,28 +1,36 @@
 <template>
-  <div>
-    <div v-if="jumpScare">
+<div id="parent">
+  <MainPage v-if="!isLogin" @setIsLogin="setIsLogin"></MainPage>
+   <div v-if="jumpScare">
       <scarepage></scarepage>
     </div>
     <homepage v-if="!jumpScare"></homepage>
-  </div>
+</div>
 </template>
 
 <script>
+import MainPage from "./views/MainPage"
 import homepage from "./views/homePage";
 import scarepage from "./views/scarePage";
+
 export default {
-  components: {
+  name : 'App',
+  components : {
+    MainPage,
     homepage,
     scarepage
   },
-  data: function() {
+  data() {
     return {
+      isLogin : false,
       linkSeram: "",
       jumpScare: false
     };
   },
-  props: [],
-  methods: {
+  methods : {
+    setIsLogin(status) {
+      this.isLogin = status
+    },
     getParameterByName(name, url) {
       if (!url) url = window.location.href;
       name = name.replace(/[\[\]]/g, "\\$&");
@@ -34,13 +42,24 @@ export default {
     }
   },
   created() {
-    this.linkSeram = this.getParameterByName("q");
+     this.linkSeram = this.getParameterByName("q");
     if (this.linkSeram) {
       this.jumpScare = true;
     }
   }
-};
+  
+    }
+
 </script>
 
 <style>
+#parent {
+   width: 100%;
+  height: 100%;
+}
+body, html {
+   width: 100%;
+  height: 100%;
+}
 </style>
+

@@ -1,6 +1,9 @@
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
 	<title>JUMPSHARE</title>
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<!-- <link href="https://fonts.googleapis.com/css?family=Lato|Quicksand" rel="stylesheet"> -->
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -13,5 +16,30 @@
 
 <body>
     <div id="app"></div>
-    <script src="./src/main.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+    
+
+    $(".name").focus(function(){
+    $(".name-help").slideDown(500);
+    }).blur(function(){
+    $(".name-help").slideUp(500);
+    });
+
+    $(".email").focus(function(){
+    $(".email-help").slideDown(500);
+    }).blur(function(){
+    $(".email-help").slideUp(500);
+    });
+
+    
+    </script>
+
+
+    <script src="/src/main.js"></script>
+
 </body>
+
+</html>
+    
