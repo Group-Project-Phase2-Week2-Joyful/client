@@ -19,6 +19,8 @@
   "homepage": "https://github.com/Group-Project-Phase2-Week2-Joyful/client#readme",
   "dependencies": {
     "axios": "^0.19.0",
+    "bootstrap": "^4.3.1",
+    "bootstrap-vue": "^2.0.4",
     "vue": "^2.6.10",
     "vue-hot-reload-api": "^2.3.4"
   },
