@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-default fixed-top">
     <div class="container" id="navtext">
-      <h1 id="pageTitle">Jumpshare!</h1>
+      <h1> id="pageTitle">Jumpshare!</h1>
     </div>
   </nav>
 </template>

@@ -4,22 +4,20 @@
     <div class="col-12">
       <div class="row">
         <div class="col-6">
-          <h3 class="postTitle">Joy of Life</h3>
+          <h3 class="postTitle"></h3>
         </div>
         <div class="col-6 dateDiv">
-          <span>12/14/16</span>
+          <span>&nbsp;</span>
         </div>
       </div>
 
       <!--ROW for the image-->
       <div class="row">
         <div class="col-12 imgDiv">
-          <div class="container">
             <img
               :src="urlImage"
-              class="img-fluid"
+              class="img-content img-fluid"
             />
-          </div>
         </div>
       </div>
 
@@ -27,7 +25,7 @@
       <div class="row">
         <div class="col-12">
           <footer>
-            <p>lalala hola como estas vamo a calmarnos x y z</p>
+            <p></p>
           </footer>
         </div>
       </div>
@@ -121,5 +119,9 @@ footer p{
       top: 50%;
       left: 50%;
       transform: translateX(-50%) translateY(-50%);
+}
+
+.img-content {
+  width: 100%;
 }
 </style>
