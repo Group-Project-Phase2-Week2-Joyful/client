@@ -1,6 +1,6 @@
 <template>
 <div id="parent">
-  <MainPage></MainPage>
+  <MainPage v-if="!isLogin" @setIsLogin="setIsLogin"></MainPage>
 </div>
 </template>
 
@@ -13,9 +13,14 @@ export default {
   },
   data() {
     return {
-      
+      isLogin : false
     };
   },
+  methods : {
+    setIsLogin(status) {
+      this.isLogin = status
+    }
+  }
 };
 </script>
 

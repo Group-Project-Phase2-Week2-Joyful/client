@@ -1,36 +1,57 @@
 <template>
   
    <!-- login -->
-  <div v-if="!isRegistered" class="register-container">
-    <div class="wrapper">
-      <div>
+   <!-- v-if="!isRegistered" -->
+  <div  class="register-container">
         <h1>Log In</h1>
-        <form class="form" method="post" action="yourpage.html">
-          <input type="text" class="name" placeholder="Name">
-            <p class="name-help">Please enter your first and last name.</p>
-          <input type="email" class="email" placeholder="Email">
+        <form @submit.prevent="login()" style="display: inline-grid" class="form">
+          <input style="width: 300px;" v-model="email" type="email" class="email" placeholder="Email">
             <p class="email-help">Please enter your current email address.</p>
-          <input @click="register()" type="submit" class="submit" value="Log In">
+          <input style="width: 300px;" v-model="password" type="password" class="password" placeholder="Password">
+            <p class="email-help">Please enter your password.</p>
+          <input @click="login()" type="submit" class="submit" value="Log In">
         </form>
-      </div>
-    </div>
   </div>
   <!-- end login  -->
 
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   data() {
-      return {
-        text: 'Name'
-      }
+    return {
+      email : '',
+      password : ''
     }
+  },
+  methods : {
+
+    login() {
+      axios({
+        method: 'post',
+        url: 'http://localhost:3000/user/login',
+        data : {
+          email : this.email,
+          password : this.password
+        }
+      })
+      .then(({data}) => {
+       console.log(data);
+        this.$emit('setIsLogin', true)
+       localStorage.setItem('token', data.token)
+       
+      })
+      .catch(err => {
+        console.log(err);
+      })
+    }
+  }
 }
 </script>
 
 <style scoped>
-
 /* codepen */
 
 body {
@@ -57,19 +78,21 @@ p {
   text-shadow: #000 0px 1px 5px;
   margin-bottom: 30px;
 }
-.form {
+.form-register {
   width: 100%;
+  display: -moz-inline-grid
 }
-input[type="text"], input[type="email"] {
+input[type="text"], input[type="email"], input[type="password"] {
   width: 98%;
-  padding: 15px 0px 15px 8px;
-  border-radius: 5px;
+  height : 50%;
+  padding: 20px 0px 20px 20px;
+  border-radius: 50px;
   box-shadow: inset 4px 6px 10px -4px rgba(0, 0, 0, 0.3), 0 1px 1px -1px rgba(255, 255, 255, 0.3);
   background: rgba(0, 0, 0, 0.2);
   outline: none;
   border: none;
   border: 1px solid black;
-  margin-bottom: 10px;
+  margin-bottom: 2px;
   color: rgb(37, 34, 34);
   text-shadow: rgb(34, 32, 32) 0px 1px 5px;
 }
@@ -124,27 +147,31 @@ input[type="submit"]:hover {
 /* end codepen */
 
 
+.input {
+  margin: 10vh 9px;
+  
+
+}
+
 .register-container {
+  
   background: rgb(245, 243, 243);
-  width: 30%;
-  height: 70%;
+  width: 500px;
+  height: 45vh;
+  margin-top: 10vh;
   border-radius: 30px;
   text-align: center;
   line-height: 250px;
   color: white;
-  margin: 0 auto;
-  opacity: 0.7;
+  margin: auto;
+  opacity: 0.5;
   align-content: center;  
   
 }
 
-.wrapper {
-  justify-content: center;
-  flex-direction: column;
-  
-}
 
 h1, p {
   color: rgb(8, 8, 8);
 }
+
 </style>

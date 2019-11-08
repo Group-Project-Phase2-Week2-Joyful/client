@@ -1,20 +1,28 @@
 <template>
 
    <!-- register -->
-  <div v-if="isRegistered" class="register-container">
+   <!-- v-if="isRegistered" -->
+  <div class="register-container" >
     <div class="wrapper">
-      <div>
+      <div >
         <h1>Register For An Account</h1>
-        <p>To sign-up for a free basic account please provide us with some basic information using
-        the contact form below. Please use valid credentials.</p>
         
-        <form class="form" method="post" action="yourpage.html">
-          <input type="text" class="name" placeholder="Name">
+        <form @submit.prevent="register()" style="display: inline-grid" class="form-register">
+
+          <input v-model="name" type="text" class="name input" placeholder="Name">
             <p class="name-help">Please enter your first and last name.</p>
-          <input type="email" class="email" placeholder="Email">
+          <input v-model="email" type="email" class="email input" placeholder="Email">
             <p class="email-help">Please enter your current email address.</p>
-        
-          <input type="submit" class="submit" value="Register">
+          <input v-model="password" type="password" class="password input" placeholder="Password">
+            <p class="email-help">Please enter your current email address.</p>
+          
+          <input type="submit" class="submit input" value="Register">
+
+          <p>
+           <B> already have an account? Please <button @click="switchToLoginPage()">Login</button> here </B>
+          
+
+          </p>
         </form>
       </div>
     </div>
@@ -24,17 +32,49 @@
 </template>
 
 <script>
+import axios from "axios"
 export default {
   data() {
     return {
-      text: 'Name'
+      name : '',
+      email : '',
+      password : ''
     }
+  },
+  methods: {
+
+    register() {
+      console.log(`aaaaaaaaaaaaaaaaaaaaaaa`);
+      
+      axios({
+        method: 'post',
+        url: 'http://localhost:3000/user/register',
+        data : {
+          name : this.name,
+          email : this.email,
+          password : this.password
+        }
+      })
+      .then(({data}) => {
+        console.log(data);
+        
+        this.$emit('setIsRegistered', true)
+      })
+      .catch(err => {
+        console.log(err.response);
+
+      })
+    },
+    switchToLoginPage() {
+    this.$emit('setIsRegistered', true)
+
   }
+}
+
 }
 </script>
 
 <style scoped>
-
 /* codepen */
 
 body {
@@ -61,19 +101,21 @@ p {
   text-shadow: #000 0px 1px 5px;
   margin-bottom: 30px;
 }
-.form {
+.form-register {
   width: 100%;
+  display: -moz-inline-grid
 }
-input[type="text"], input[type="email"] {
+input[type="text"], input[type="email"], input[type="password"] {
   width: 98%;
-  padding: 15px 0px 15px 8px;
-  border-radius: 5px;
+  height : 50%;
+  padding: 20px 0px 20px 20px;
+  border-radius: 50px;
   box-shadow: inset 4px 6px 10px -4px rgba(0, 0, 0, 0.3), 0 1px 1px -1px rgba(255, 255, 255, 0.3);
   background: rgba(0, 0, 0, 0.2);
   outline: none;
   border: none;
   border: 1px solid black;
-  margin-bottom: 10px;
+  margin-bottom: 2px;
   color: rgb(37, 34, 34);
   text-shadow: rgb(34, 32, 32) 0px 1px 5px;
 }
@@ -128,25 +170,30 @@ input[type="submit"]:hover {
 /* end codepen */
 
 
+.input {
+  margin: 7vh 0px
+}
+
 .register-container {
   
   background: rgb(245, 243, 243);
-  width: 30%;
-  height: 70%;
+  width: 500px;
+  height: 80vh;
+  margin-top: 10vh;
   border-radius: 30px;
   text-align: center;
   line-height: 250px;
   color: white;
-  margin: 0 auto;
-  opacity: 0.6;
+  margin: auto;
+  opacity: 0.4;
   align-content: center;  
   
 }
 
 .wrapper {
-  justify-content: center;
-  flex-direction: column;
-  
+  /* justify-content: center; */
+  /* flex-direction: column; */
+  height: 50vh;
 }
 
 h1, p {
