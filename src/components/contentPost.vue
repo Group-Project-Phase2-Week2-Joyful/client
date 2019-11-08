@@ -1,3 +1,48 @@
+<template>
+  <article class="row posts">
+    <!--ROW for the heading and date-->
+    <div class="col-12">
+      <div class="row">
+        <div class="col-6">
+          <h3 class="postTitle">Joy of Life</h3>
+        </div>
+        <div class="col-6 dateDiv">
+          <span>12/14/16</span>
+        </div>
+      </div>
+
+      <!--ROW for the image-->
+      <div class="row">
+        <div class="col-12 imgDiv">
+          <div class="container">
+            <img
+              :src="urlImage"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!--ROW for the footer-->
+      <div class="row">
+        <div class="col-12">
+          <footer>
+            <p>lalala hola como estas vamo a calmarnos x y z</p>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </article>
+</template>
+
+<script>
+export default {
+    name: "contentPost",
+    props: ['urlImage']
+};
+</script>
+
+<style scoped>
 body {
     color: grey;
     font-size: 1em;
@@ -77,3 +122,4 @@ footer p{
       left: 50%;
       transform: translateX(-50%) translateY(-50%);
 }
+</style>
