@@ -6,7 +6,7 @@
       
       <div class="row">
         <section class="col-12 col-sm-8 col-lg-6 col-xl-4 mx-auto">
-          <!-- <contentPost v-for="(image, i) in images" :key="i" :url-image="image"></contentPost> -->
+          <contentPost v-for="(image, i) in images" :key="i" :url-image="image"></contentPost>
         </section>
       </div>
     </main>
