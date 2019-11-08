@@ -46,7 +46,7 @@ export default {
 body {
     color: grey;
     font-size: 1em;
-    font-family: "Quicksand", sans-serif;
+    font-family: "Metamorphous", sans-serif;
     font-weight: 500;
     background-color: rgb(0, 0, 0);
 }

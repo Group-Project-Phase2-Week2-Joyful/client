@@ -1,7 +1,7 @@
 body[data-v-6495be] {
     color: grey;
     font-size: 1em;
-    font-family: "Quicksand", sans-serif;
+    font-family: "Metamorphous", sans-serif;
     font-weight: 500;
     background-color: rgb(0, 0, 0);
 }
@@ -19,7 +19,7 @@ h1[data-v-6495be], h2[data-v-6495be], h3[data-v-6495be], h4[data-v-6495be], h5[d
     line-height: 60px;
 }
 #pageTitle[data-v-6495be]{
-    font-family: Arial, sans-serif;
+    font-family: "Metamorphous", sans-serif;
     font-weight: 700;
 }
 span[data-v-6495be]{
@@ -64,7 +64,7 @@ footer p[data-v-6495be]{
 body[data-v-fcaa8c] {
     color: grey;
     font-size: 1em;
-    font-family: "Quicksand", sans-serif;
+    font-family: "Metamorphous", sans-serif;
     font-weight: 500;
     background-color: rgb(0, 0, 0);
 }

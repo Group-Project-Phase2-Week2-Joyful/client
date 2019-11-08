@@ -16,7 +16,7 @@ export default {
 body {
     color: grey;
     font-size: 1em;
-    font-family: "Quicksand", sans-serif;
+    font-family: "Metamorphous", sans-serif;
     font-weight: 500;
     background-color: rgb(0, 0, 0);
 }
@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6, p{
 }
 
 #pageTitle{
-    font-family: Arial, sans-serif;
+    font-family: "Metamorphous", sans-serif;
     font-weight: 700;
 }
 
