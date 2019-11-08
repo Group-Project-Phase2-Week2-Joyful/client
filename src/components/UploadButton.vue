@@ -1,14 +1,26 @@
 <template>
   <div class="upload-container">
     <!-- Styled -->
-    <b-form-file
-      v-model="file"
-      :state="Boolean(file)"
-      placeholder="Choose a file or drop it here..."
-      drop-placeholder="Drop file here..."
-    ></b-form-file>
-    <b-button @click="upload">Upload</b-button>
+    <div class="container">
+    <div class="u-button-container">
+    <b-field class="file">
+        <b-upload v-model="file">
+            <a class="button is-danger">
+                <b-icon icon="upload"></b-icon>
+                <span>Choose file</span>
+            </a>
+        </b-upload>
+        <span class="file-name" v-if="file">
+            {{ file.name }}
+        </span>
+        
+    </b-field>
+    </div>
+    <b-button @click="upload" variant="outline-danger">Upload</b-button>
+    </div>
   </div>
+    
+    
 </template>
 
 <script>
@@ -27,6 +39,7 @@ import axios from '../../helpers/axios'
           .then(({ data }) => {
             console.log(data)
             this.file = null
+            this.$emit('getImages')
           })
           .catch(console.log)
       },
@@ -37,6 +50,12 @@ import axios from '../../helpers/axios'
 
 <style scoped>
 .upload-container {
-  margin-top: 200px;
+  margin-top: 10px;
+  text-align: center;
+  
+}
+.u-button-container {
+  display: flex;
+  justify-content: center;
 }
 </style>
