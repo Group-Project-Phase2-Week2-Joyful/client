@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="upload-container">
     <!-- Styled -->
     <b-form-file
       v-model="file"
@@ -34,3 +34,9 @@ import axios from '../../helpers/axios'
     }
   }
 </script>
+
+<style scoped>
+.upload-container {
+  margin-top: 200px;
+}
+</style>
