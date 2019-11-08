@@ -4,7 +4,7 @@
    <div v-if="jumpScare">
       <scarepage></scarepage>
     </div>
-    <homepage v-if="!jumpScare"></homepage>
+    <homepage v-if="!jumpScare && isLogin"></homepage>
 </div>
 </template>
 
@@ -44,6 +44,7 @@ export default {
   created() {
      this.linkSeram = this.getParameterByName("q");
     if (this.linkSeram) {
+      this.isLogin = true;
       this.jumpScare = true;
     }
   }
