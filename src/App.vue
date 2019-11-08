@@ -3,7 +3,7 @@
     <div v-if="jumpScare">
       <scarepage></scarepage>
     </div>
-    <homepage></homepage>
+    <homepage v-if="!jumpScare"></homepage>
   </div>
 </template>
 

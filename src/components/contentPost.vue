@@ -24,8 +24,11 @@
       <!--ROW for the footer-->
       <div class="row">
         <div class="col-12">
-          <footer>
-            <p></p>
+          <footer style="text-align: center; margin-top: 10px;">
+            <a class="twitter-share-button"
+              :href="sharelink"
+              data-size="large">
+            <i class="fab fa-twitter" style="color: red; font-size: 30px; margin-top: 5px;"></i></a>
           </footer>
         </div>
       </div>
@@ -36,6 +39,11 @@
 <script>
 export default {
     name: "contentPost",
+    data() {
+      return {
+        sharelink: 'https://twitter.com/intent/tweet?text=' + window.location.href + `?q=${this.idImage}`
+      }
+    },
     props: ['urlImage', 'idImage'],
     methods: {
       insertParam(key, value) {
