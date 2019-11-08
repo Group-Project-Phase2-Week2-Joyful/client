@@ -1,1 +1,8 @@
 node_modules
+<<<<<<< HEAD
+dist
+.cache
+=======
+.cache
+dist
+>>>>>>> development
